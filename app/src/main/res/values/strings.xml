@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Onlyou</string>
+    <string name="menu_title">顶置分类排序</string>
+    <string name="home_page_str">小视频</string>
+    <string name="attention_str">大靓妞</string>
+    <string name="inform_str">移动端</string>
+    <string name="myself_str">瞎叨叨</string>
+    <string name="tryhard">努力加载中.......</string>
+    <string name="recommend"># 相关推荐</string>
+    <string name="theend">The  End .</string>
+    <string name="search">搜索视频</string>
+    <string name="searchstr">search</string>
+    <string name="welfare">福利壁纸</string>
+    <string name="androidstr">Android</string>
+    <string name="iosstr">IOS</string>
+    <string name="frontstr">前端</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="only.you.ui.activity.OlnyouActivity">
+
+
+
+
+    <include
+        android:id="@+id/menu_foot"
+        layout="@layout/menu_foot"></include>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/menu_foot"
+        android:layout_below="@id/linView">
+
+    </FrameLayout>
+    <View
+        android:id="@+id/linView_foot"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/frame"
+        android:background="@color/detailsstr" />
+</RelativeLayout>

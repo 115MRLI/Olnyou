@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+
+        applicationId "only.you"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    /*下拉刷新框架*/
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.yysauce:easyrecyclerview:1.0.0'
+    compile 'com.youth.banner:banner:1.4.10'
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.9'
+    compile 'com.loopeer.library:cardstack:1.0.2'
+    compile 'com.makeramen:roundedimageview:2.2.1'
+    compile 'com.afollestad.material-dialogs:core:0.9.1.0'
+    compile 'com.afollestad.material-dialogs:commons:0.9.1.0'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    compile 'org.xutils:xutils:3.5.0'
+    compile 'com.android.support:design:25.3.1'
+    compile 'me.yuqirong:cardswipelayout:1.0.0'
+    compile 'com.github.Aspsine:SwipeToLoadLayout:v1.0.4'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    /* 图片浏览器所需 */
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    /*防抖*/
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+}

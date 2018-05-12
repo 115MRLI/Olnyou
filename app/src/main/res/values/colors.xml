@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="detailsstr">#A7A7A7</color>
+    <color name="titlestr">#333333</color>
+    <color name="white">#fff</color>
+    <color name="topbc_two">#3c3f41</color>
+    <color name="transparency">#00000000</color>
+    <color name="detailsbc">#99464c4c</color>
+    <color name="searchbc">#f0f0f0</color>
+    <color name="translucent">#20000000</color>
+    <color name="itemGrayBg">#eaeaea</color>
+</resources>
