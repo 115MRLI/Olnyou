@@ -90,14 +90,35 @@ public class DetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public interface SlideListener {
+        /**
+         * 加载更多
+         *
+         * @param size
+         */
         void onLoad(int size);
+
+        /**
+         * itme点击方法
+         *
+         * @param item
+         */
         void onItmeClick(ClassificationDetails.ItemListBean item);
     }
 
+    /**
+     * 设置接口监听
+     *
+     * @param listener2
+     */
     public void setSlideListener(SlideListener listener2) {
         listener = listener2;
     }
 
+    /**
+     * 改变适配器数据
+     *
+     * @param listBeanList
+     */
     public void changeData(List<ClassificationDetails.ItemListBean> listBeanList) {
         for (ClassificationDetails.ItemListBean bean : listBeanList) {
             itemList.add(bean);

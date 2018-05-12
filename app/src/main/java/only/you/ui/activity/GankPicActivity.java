@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
 
@@ -187,6 +190,17 @@ public class GankPicActivity extends BaseActivity {
                     currentImageView = imageView;
                     img_desc = welFareLists.get(position).getDesc();
                     img_url = welFareLists.get(position).getUrl();
+                    //弹窗
+                    showDialog("是否下载该图片", new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            if (which == DialogAction.POSITIVE) {
+                                saveImage();
+                            } else if (which == DialogAction.NEGATIVE) {
+
+                            }
+                        }
+                    });
                     return false;
                 }
             });

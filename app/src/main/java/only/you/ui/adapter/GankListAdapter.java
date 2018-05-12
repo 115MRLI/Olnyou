@@ -90,7 +90,7 @@ public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         listener = mlistener;
     }
 
-    //上拉加载回调接口
+
     public interface OnLoadListener {
         void onLoadMore();
 

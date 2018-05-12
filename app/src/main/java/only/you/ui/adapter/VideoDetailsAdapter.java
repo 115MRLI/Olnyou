@@ -28,6 +28,7 @@ import only.you.model.bean.onlyoueyes.Correlation;
 public class VideoDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Correlation.VideoListBean> videoList;
     private ClickListener listener;
+
     public VideoDetailsAdapter(List<Correlation.VideoListBean> videoList) {
         this.videoList = videoList;
     }
@@ -61,6 +62,7 @@ public class VideoDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView videotype;
         @BindView(R.id.itme)
         RelativeLayout itme;
+
         public VideoDetailsHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -69,7 +71,7 @@ public class VideoDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public void bindItem(final Correlation.VideoListBean bean) {
             Glide.with(App.mContext).load(bean.getCoverForDetail()).centerCrop().skipMemoryCache(true).into(correlatinIv);
             correlatinTitle.setText(bean.getTitle());
-            videotype.setText("# "+bean.getCategory());
+            videotype.setText("# " + bean.getCategory());
             itme.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -78,10 +80,17 @@ public class VideoDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             });
         }
     }
-    public interface ClickListener{
+
+    public interface ClickListener {
+        /**
+         * Itme点击方法
+         *
+         * @param bean
+         */
         void onItmeClick(Correlation.VideoListBean bean);
     }
-    public void setClickListener(ClickListener listener2){
+
+    public void setClickListener(ClickListener listener2) {
         listener = listener2;
     }
 }

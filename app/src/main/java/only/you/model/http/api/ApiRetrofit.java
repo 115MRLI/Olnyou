@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @name Onlyou
+ * @name 该类暂时废弃
  * @class name：only.you.model.http.api
  * @anthor 家佑
  * @time 2018/4/20
@@ -17,10 +17,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiRetrofit {
     public static final String Eyes_BASE_URL = "http://baobab.kaiyanapp.com/api/";
     public Onlyou OnlyouApiService;
-//    private static Retrofit retrofit;
+
+    //    private static Retrofit retrofit;
     public Onlyou getOnlyouApisService() {
         return OnlyouApiService;
     }
+
     public ApiRetrofit() {
         //缓存文件夹
         File cacheFile = new File(App.mContext.getCacheDir(), "responses");
