@@ -8,7 +8,7 @@ import only.you.ui.adapter.OnlyouMenuAdapter;
 /**
  * @name Onlyou
  * @class name：only.you.ui.contract
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/4/24
  */
 public interface HomeFragmentContract extends BaseView {

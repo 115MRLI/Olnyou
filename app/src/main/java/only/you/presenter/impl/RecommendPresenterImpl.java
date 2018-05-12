@@ -13,7 +13,7 @@ import only.you.ui.contract.RecommendContract;
 /**
  * @name Onlyou
  * @class name：only.you.presenter.impl
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/4
  */
 public class RecommendPresenterImpl<T extends RecommendContract> implements IRecommendPresenter<T>, RecommendModel.RecommendListener {

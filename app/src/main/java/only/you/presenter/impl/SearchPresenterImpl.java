@@ -12,7 +12,7 @@ import only.you.ui.contract.SearchContract;
 /**
  * @name Onlyou
  * @class name：only.you.presenter.impl
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/8
  */
 public class SearchPresenterImpl<T extends SearchContract> implements ISearchPresenter<T>, SearchModel.SearchListener {

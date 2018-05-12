@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by L on 2017/12/26.
+ * Created by 家佑
  */
 
 public class MeiZhi implements Serializable {

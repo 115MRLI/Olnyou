@@ -3,6 +3,9 @@ package only.you.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -11,10 +14,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +49,8 @@ public class GankPicActivity extends BaseActivity {
     private List<MeiZhi.ResultsBean> welFareLists = new ArrayList<>();
     private int currentPosition = 0;
     private GankPicActivity context;
+    private String img_url;
+    private String img_desc;
 
     @Override
     protected int getLayout() {
@@ -53,7 +62,7 @@ public class GankPicActivity extends BaseActivity {
         super.initView();
         context = this;
         List<MeiZhi.ResultsBean> resultsBeen = (List<MeiZhi.ResultsBean>) getIntent().getSerializableExtra("resultsBeen");
-        currentPosition = getIntent().getIntExtra("position",0);
+        currentPosition = getIntent().getIntExtra("position", 0);
         welFareLists.addAll(resultsBeen);
 
     }
@@ -176,6 +185,8 @@ public class GankPicActivity extends BaseActivity {
                 @Override
                 public boolean onLongClick(View v) {
                     currentImageView = imageView;
+                    img_desc = welFareLists.get(position).getDesc();
+                    img_url = welFareLists.get(position).getUrl();
                     return false;
                 }
             });
@@ -190,36 +201,40 @@ public class GankPicActivity extends BaseActivity {
      * @param cActivity
      * @param welFareLists
      */
-    public static void jumpHere(Activity cActivity, List<MeiZhi.ResultsBean> welFareLists,int position) {
+    public static void jumpHere(Activity cActivity, List<MeiZhi.ResultsBean> welFareLists, int position) {
         Intent intent = new Intent(cActivity, GankPicActivity.class);
         intent.putExtra("resultsBeen", (Serializable) welFareLists);
-        intent.putExtra("position",position);
+        intent.putExtra("position", position);
         cActivity.startActivity(intent);
     }
-//    private void saveImage() {
-//        currentImageView.setDrawingCacheEnabled(true);
-//        final Bitmap bitmap = Bitmap.createBitmap(currentImageView.getDrawingCache());
-//        currentImageView.setDrawingCacheEnabled(false);
-//        if (bitmap == null) {
-//            return;
-//        }
-//        //save Image
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                final boolean saveBitmapToSD = BitmapUtils.saveBitmapToSD(bitmap, Constants.BasePath, System.currentTimeMillis() + ".jpg", true);
-//                App.getHandler().post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        dissmissProgressDialog();
-//                        if (saveBitmapToSD) {
-//                            showProgressSuccess("保存成功");
-//                        } else {
-//                            showProgressError("保存失败");
-//                        }
-//                    }
-//                });
-//            }
-//        }).start();
-//    }
+
+    /**
+     * 保存图片
+     */
+    private void saveImage() {
+        currentImageView.buildDrawingCache();
+        Bitmap bitmap = currentImageView.getDrawingCache();
+        //将Bitmap 转换成二进制，写入本地
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Onlyou");
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        File file = new File(dir, img_desc + ".png");
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(byteArray, 0, byteArray.length);
+            fos.flush();
+            //用广播通知相册进行更新相册
+            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            Uri uri = Uri.fromFile(file);
+            intent.setData(uri);
+            GankPicActivity.this.sendBroadcast(intent);
+            Toast.makeText(GankPicActivity.this, "保存成功~", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

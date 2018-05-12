@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 /**
  * @name Onlyou圆形
  * @class name：only.you.ui.widget
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/3
  */
 public class GlideCircleTransform extends BitmapTransformation {

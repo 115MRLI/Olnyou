@@ -22,7 +22,7 @@ import only.you.model.bean.onlyoueyes.Correlation;
 /**
  * @name Onlyou
  * @class name：only.you.ui.adapter
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/7
  */
 public class VideoDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

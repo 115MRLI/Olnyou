@@ -8,7 +8,7 @@ import only.you.model.bean.onlyoueyes.Search;
 /**
  * @name Onlyou
  * @class name：only.you.ui.contract
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/8
  */
 public interface SearchContract extends BaseView {

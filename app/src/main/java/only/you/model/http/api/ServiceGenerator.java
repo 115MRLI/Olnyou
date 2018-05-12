@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @name Onlyou
  * @class name：only.you.model.http.api
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/8
  */
 public class ServiceGenerator {

@@ -17,7 +17,7 @@ import only.you.utils.OnlyoUtils;
 /**
  * @name Onlyou
  * @class name：only.you.presenter.impl
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/4/21
  */
 public class OlnyouPresenterImpl<T extends HomeFragmentContract> implements IOlnyouPresenter<T>, OlnyouModel.OlnyouListener {

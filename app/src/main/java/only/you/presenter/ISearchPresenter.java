@@ -6,7 +6,7 @@ import only.you.base.BaseView;
 /**
  * @name Onlyou
  * @class name：only.you.presenter
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/8
  */
 public interface ISearchPresenter<T extends BaseView> extends BasePresenter<T> {

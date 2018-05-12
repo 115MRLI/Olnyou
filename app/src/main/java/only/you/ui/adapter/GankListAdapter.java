@@ -20,7 +20,7 @@ import only.you.model.bean.gank.MeiZhi;
 
 
 /**
- * Created by L on 2017/12/26.
+ * Created by家佑
  */
 
 public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

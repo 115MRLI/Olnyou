@@ -24,7 +24,7 @@ import only.you.ui.widget.GlideCircleTransform;
 /**
  * @name Onlyou
  * @class name：only.you.ui.adapter
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/8
  */
 public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

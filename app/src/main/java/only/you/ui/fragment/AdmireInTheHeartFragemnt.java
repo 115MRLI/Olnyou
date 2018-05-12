@@ -26,7 +26,7 @@ import only.you.utils.OnlyoUtils;
 /**
  * @name Onlyou
  * @class name：only.you.ui.fragment
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/4/24
  */
 public class AdmireInTheHeartFragemnt extends BaseFragment implements AdmireInTheHeartContract  {

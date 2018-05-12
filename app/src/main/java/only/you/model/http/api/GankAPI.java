@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 /**
  * @name Onlyou
  * @class name：only.you.model.http.api
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/9
  */
 public interface GankAPI {

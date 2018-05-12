@@ -12,7 +12,7 @@ import only.you.ui.contract.VideoDetailsContract;
 /**
  * @name Onlyou
  * @class name：only.you.presenter.impl
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/7
  */
 public class VideoDetailsPresenterImpl<T extends VideoDetailsContract> implements IVideoDetailsPresenter<T>, VideoDetailsModel.VideoDetailsListener {

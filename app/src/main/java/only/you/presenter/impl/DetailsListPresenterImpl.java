@@ -14,7 +14,7 @@ import only.you.ui.contract.DetailsLisContract;
 /**
  * @name Onlyou
  * @class name：only.you.presenter.impl
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/2
  */
 public class DetailsListPresenterImpl<T extends DetailsLisContract> implements IDetailsListPresenter<T>, DetailsListModel.DetailsListener {

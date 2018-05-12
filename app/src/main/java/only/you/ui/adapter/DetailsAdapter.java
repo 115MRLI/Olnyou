@@ -23,7 +23,7 @@ import only.you.ui.widget.GlideCircleTransform;
 /**
  * @name Onlyou
  * @class name：only.you.ui.adapter
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/2
  */
 public class DetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

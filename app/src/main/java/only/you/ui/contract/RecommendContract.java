@@ -8,7 +8,7 @@ import only.you.model.bean.onlyoueyes.Homepage;
 /**
  * @name Onlyou
  * @class name：only.you.ui.contract
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/4
  */
 public interface RecommendContract  extends BaseView{

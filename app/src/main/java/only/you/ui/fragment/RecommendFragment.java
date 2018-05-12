@@ -18,7 +18,7 @@ import only.you.utils.OnlyoUtils;
 /**
  * @name Onlyou
  * @class name：only.you.ui.fragment
- * @anthor 李永胜 E-mail:liys@wangang.cc
+ * @anthor 家佑
  * @time 2018/5/3
  */
 public class RecommendFragment extends BaseFragment implements RecommendContract {
