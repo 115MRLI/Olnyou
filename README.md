@@ -10,9 +10,9 @@
 
 ###  使用依赖路
 
-     material **dialog库
-     xutils  **说实话挺强大的一个库加载网络，数据库，但是我只是在列表页用了一下感觉挺亏待它的
-
+     material
+     xutils
+     jiaozivideoplayer  基于IJK的视频播放挺强大的
 
 
 
