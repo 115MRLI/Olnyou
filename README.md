@@ -5,6 +5,7 @@
 ![](image/screenshot-1526105894942.jpg)
 ![](image/screenshot-1526105923854.jpg)
 ![](image/screenshot-1526105934054.jpg)
+###  视频的查看
 ![](image/screenshot-1526105944751.jpg)
 ![](image/screenshot-1526105955966.jpg)
 ![](image/screenshot-1526105973600.jpg)
