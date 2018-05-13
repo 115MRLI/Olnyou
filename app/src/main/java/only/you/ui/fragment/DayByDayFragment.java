@@ -1,7 +1,9 @@
 package only.you.ui.fragment;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -42,6 +44,7 @@ public class DayByDayFragment extends BaseFragment {
     TextView frontStr;
     private List<TextView> textViews = new ArrayList<>();
     private List<RelativeLayout> linearLayouts = new ArrayList<>();
+
     @Override
     protected int getLayout() {
         return R.layout.daybyday_fragment;
@@ -65,12 +68,17 @@ public class DayByDayFragment extends BaseFragment {
         for (RelativeLayout linearLayout : linearLayouts) {
             onClick(linearLayout);
         }
+        for (TextView textView:textViews) {
+            setTextViewsStyle(textView);
+        }
     }
 
     @Override
     protected void initEvent() {
         super.initEvent();
+        showFragment(new AndroidFragment());
     }
+
     /**
      * 获取菜单文字
      */
@@ -107,6 +115,20 @@ public class DayByDayFragment extends BaseFragment {
                 textViews.get(i).setTextColor(Color.parseColor("#A7A7A7"));
             }
         }
+    }
+
+    /**
+     * 设置字体样式
+     *
+     * @param frontStr
+     */
+    private void setTextViewsStyle(TextView frontStr) {
+        //得到AssetManager
+        AssetManager mgr = getActivity().getAssets();
+        //根据路径得到Typeface
+        Typeface tf = Typeface.createFromAsset(mgr, "fonts/woman.ttf");
+        //设置字体
+        frontStr.setTypeface(tf);
     }
 
     /**

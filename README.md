@@ -8,12 +8,15 @@
 
      功能目前有不完善的地方自己仍努力的的再写;
 
-###  使用依赖库
+###  主要使用的依赖库
 
      material
      xutils
      jiaozivideoplayer  基于IJK的视频播放挺强大的
-
+     retrofit2
+     butterknife
+     rxbinding
+     glide
 
 
 # 展示现有功能
@@ -40,5 +43,11 @@
 
 ![](image/screenshot-1526106007510.jpg)
 ![](image/screenshot-1526106030014.jpg)
+
+移动端和瞎叨叨页面也已完成<br><br>
+
+![](image/screenshot-1526204915406.jpg)
+![](image/screenshot-1526205146007.jpg)
+
 
 

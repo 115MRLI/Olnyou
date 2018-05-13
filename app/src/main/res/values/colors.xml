@@ -12,4 +12,6 @@
     <color name="searchbc">#f0f0f0</color>
     <color name="translucent">#20000000</color>
     <color name="itemGrayBg">#eaeaea</color>
+    <color name="type">#80d640</color>
+    <color name="ios">#1070b9</color>
 </resources>

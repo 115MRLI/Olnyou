@@ -1,6 +1,10 @@
 package only.you.ui.contract;
 
-import android.support.v7.widget.RecyclerView;
+
+import java.util.List;
+
+import only.you.base.BaseView;
+import only.you.model.bean.gank.ResultsBean;
 
 /**
  * @name Onlyou
@@ -8,7 +12,7 @@ import android.support.v7.widget.RecyclerView;
  * @anthor 家佑
  * @time 2018/5/12
  */
-public interface AndroidContract {
+public interface GankContract extends BaseView {
     /**
      * 吐丝展示内容
      *
@@ -17,9 +21,7 @@ public interface AndroidContract {
     void showToast(String details);
 
     /**
-     * 加入适配器
-     *
-     * @param adapter
+     * 加入适配器数据
      */
-    void addAdapter(RecyclerView.Adapter adapter);
+    void addAdapter(List<ResultsBean> resultsBeen);
 }
