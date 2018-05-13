@@ -29,7 +29,7 @@ import only.you.ui.widget.GlideCircleTransform;
 public class DetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<ClassificationDetails.ItemListBean> itemList;
     private SlideListener listener;
-
+    private int numpages = 0;
     public DetailsAdapter(List<ClassificationDetails.ItemListBean> itemList) {
         this.itemList = itemList;
     }
@@ -47,7 +47,10 @@ public class DetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             menuHolder.bindItem(itemList.get(position));
             Log.e("监听", "position: " + position + "  itemList.size()  :" + itemList.size());
             if (position == itemList.size() - 1) {
-                listener.onLoad(itemList.size());
+                //如果服务器返回数据为0将不再向服务器请求数据
+                if (numpages != 0) {
+                    listener.onLoad(itemList.size());
+                }
             }
         }
     }
@@ -120,6 +123,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
      * @param listBeanList
      */
     public void changeData(List<ClassificationDetails.ItemListBean> listBeanList) {
+        numpages = listBeanList.size();
         for (ClassificationDetails.ItemListBean bean : listBeanList) {
             itemList.add(bean);
         }

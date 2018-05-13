@@ -27,6 +27,7 @@ public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<MeiZhi.ResultsBean> results;
     public OnLoadListener listener = null;
     private boolean processFlag = true; //默认可以点击
+    private int numpages = 0;
 
     public GankListAdapter(List<MeiZhi.ResultsBean> meiZhis) {
         this.results = meiZhis;
@@ -56,7 +57,10 @@ public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
             if (position == results.size() - 1) {
-                listener.onLoadMore();
+                //如果服务器返回数据为0将不再向服务器请求数据
+                if (numpages != 0) {
+                    listener.onLoadMore();
+                }
             }
         }
     }
@@ -101,6 +105,7 @@ public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      * 添加数据
      */
     public void setChangeData(List<MeiZhi.ResultsBean> results2) {
+        numpages = results2.size();
         for (MeiZhi.ResultsBean resultsBean : results2) {
             results.add(resultsBean);
         }
