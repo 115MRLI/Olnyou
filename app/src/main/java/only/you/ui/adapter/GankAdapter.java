@@ -49,7 +49,7 @@ public class GankAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 public void onClick(View v) {
                     if (processFlag) {
                         setProcessFlag();//
-                        listener.onItmeClick(position);
+                        listener.onItmeClick(list.get(position));
                         new TimeThread().start();
                     }
 
@@ -92,6 +92,7 @@ public class GankAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             titlestr.setText(gank.getDesc());
             typestr.setText(gank.getType());
             whostr.setText("author : "+gank.getWho());
+            Log.e("网址",gank.getUrl());
             if (gank.getType().equals("iOS")){
                 typestr.setBackgroundResource(R.drawable.type_ios_bc);
             }else if (gank.getType().equals("前端")){
@@ -126,7 +127,7 @@ public class GankAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public interface OnLoadListener {
         void onLoadMore();
 
-        void onItmeClick(int position);
+        void onItmeClick(ResultsBean gank);
     }
     public void setOnLoadListener(OnLoadListener mlistener) {
         listener = mlistener;

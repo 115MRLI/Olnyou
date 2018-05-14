@@ -17,6 +17,7 @@ import only.you.base.BaseFragment;
 import only.you.model.bean.gank.ResultsBean;
 import only.you.presenter.IGankPresenter;
 import only.you.presenter.impl.GankPresenterImpl;
+import only.you.ui.activity.GankWebActivity;
 import only.you.ui.adapter.GankAdapter;
 import only.you.ui.contract.GankContract;
 import only.you.utils.OnlyoUtils;
@@ -89,8 +90,8 @@ public class MyselFragment extends BaseFragment implements GankContract {
             }
 
             @Override
-            public void onItmeClick(int position) {
-
+            public void onItmeClick(ResultsBean gank) {
+                GankWebActivity.jumpHere(getActivity(),gank.getUrl(),"技术杂烩");
             }
         });
     }

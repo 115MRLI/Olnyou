@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:id="@+id/titlelin"
         android:layout_width="match_parent"
@@ -11,9 +10,17 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="50dp"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/back_lin"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/back_iv" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/titlestr"
@@ -35,9 +42,12 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/detailsstr"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycle"
+    <WebView
+        android:id="@+id/webview"
+        android:layout_below="@id/linView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/linView" />
+        android:layout_height="match_parent">
+
+    </WebView>
+
 </RelativeLayout>

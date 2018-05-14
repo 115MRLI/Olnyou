@@ -56,7 +56,8 @@
         <activity
             android:name=".ui.activity.GankPicActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/ImageBrowserTheme"></activity>
+            android:theme="@style/ImageBrowserTheme" />
+        <activity android:name=".ui.activity.GankWebActivity"></activity>
     </application>
 
 </manifest>
