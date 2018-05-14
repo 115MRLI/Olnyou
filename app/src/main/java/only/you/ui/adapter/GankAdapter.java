@@ -93,11 +93,11 @@ public class GankAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             typestr.setText(gank.getType());
             whostr.setText("author : "+gank.getWho());
             if (gank.getType().equals("iOS")){
-                typestr.setBackgroundColor(Color.parseColor("#1070b9"));
+                typestr.setBackgroundResource(R.drawable.type_ios_bc);
             }else if (gank.getType().equals("前端")){
-                typestr.setBackgroundColor(Color.parseColor("#FF4081"));
+                typestr.setBackgroundResource(R.drawable.type_xia_bc);
             }else if (gank.getType().equals("拓展资源")){
-                typestr.setBackgroundColor(Color.parseColor("#FFCE44"));
+                typestr.setBackgroundResource(R.drawable.type_q_bc);
             }
         }
     }

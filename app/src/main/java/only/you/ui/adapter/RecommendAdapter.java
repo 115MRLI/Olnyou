@@ -84,11 +84,18 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         public void bindItem(final Homepage.ItemListBean item) {
             if (item.getType().equals("video")) {
-                Log.e("详情名字", item.getType());
+                //修复无作者信息bug
+                if (item.getData().getAuthor() != null){
+                    Glide.with(App.mContext).load(item.getData().getAuthor().getIcon()).transform(new GlideCircleTransform(App.mContext)).skipMemoryCache(true).into(headIv);
+                    titletv.setText("# " + item.getData().getAuthor().getName());
+                }else {
+                    Glide.with(App.mContext).load(item.getData().getTags().get(0).getBgPicture()).transform(new GlideCircleTransform(App.mContext)).skipMemoryCache(true).into(headIv);
+                    titletv.setText("# " + item.getData().getTags().get(0).getName());
+                }
                 Glide.with(App.mContext).load(item.getData().getCover().getDetail()).centerCrop().skipMemoryCache(true).into(detailsIv);
-                Glide.with(App.mContext).load(item.getData().getAuthor().getIcon()).transform(new GlideCircleTransform(App.mContext)).skipMemoryCache(true).into(headIv);
+
                 detailstv.setText(item.getData().getTitle());
-                titletv.setText("# " + item.getData().getAuthor().getName());
+
                 itmecard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

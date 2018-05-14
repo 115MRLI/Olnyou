@@ -712,6 +712,24 @@ public class Homepage implements Serializable{
                 private int approvedNotReadyVideoCount;
                 private boolean ifPgc;
 
+                @Override
+                public String toString() {
+                    return "AuthorBean{" +
+                            "id=" + id +
+                            ", icon='" + icon + '\'' +
+                            ", name='" + name + '\'' +
+                            ", description='" + description + '\'' +
+                            ", link='" + link + '\'' +
+                            ", latestReleaseTime=" + latestReleaseTime +
+                            ", videoNum=" + videoNum +
+                            ", adTrack=" + adTrack +
+                            ", follow=" + follow +
+                            ", shield=" + shield +
+                            ", approvedNotReadyVideoCount=" + approvedNotReadyVideoCount +
+                            ", ifPgc=" + ifPgc +
+                            '}';
+                }
+
                 public int getId() {
                     return id;
                 }
