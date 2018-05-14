@@ -2,6 +2,7 @@ package only.you.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.SupportActivity;
 
@@ -21,7 +22,8 @@ public class App extends Application {
     private static App instance;
     private Set<FragmentActivity> allActivities;
     public static Context mContext;
-
+    private static Typeface localTypeface;
+    private static Typeface localTypeface2;
     private static DbManager.DaoConfig daoConfig;
 
     public DbManager.DaoConfig getDaoConfig() {
@@ -81,6 +83,8 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         mContext = getApplicationContext();
+        localTypeface = Typeface.createFromAsset(getAssets(), "fonts/woman.ttf");
+        localTypeface2 = Typeface.createFromAsset(getAssets(), "fonts/fish.TTF");
         initializedDatabase();
     }
 
@@ -99,6 +103,20 @@ public class App extends Application {
 
                     }
                 });
+    }
+
+    /**
+     * 初始化字体样式
+     *
+     * @return
+     */
+    public static Typeface setFontType(boolean isflag) {
+        if (isflag){
+            return localTypeface;
+        }else {
+           return localTypeface2;
+        }
+
     }
 
 }

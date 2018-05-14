@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import cn.jzvd.JZVideoPlayerStandard;
 import only.you.R;
+import only.you.app.App;
 import only.you.base.BaseActivity;
 import only.you.model.bean.onlyoueyes.ClassificationDetails;
 import only.you.model.bean.onlyoueyes.Homepage;
@@ -157,15 +158,14 @@ public class VideoDetailsActivity extends BaseActivity implements VideoDetailsCo
      */
     private void setTextStyles(TextView view, boolean flag) {
         //得到AssetManager
-        AssetManager mgr = getAssets();
         Typeface tf = null;
         if (flag) {
             //根据路径得到Typeface
-            tf = Typeface.createFromAsset(mgr, "fonts/woman.ttf");
+            tf = App.setFontType(true);
         } else {
 
             //根据路径得到Typeface
-            tf = Typeface.createFromAsset(mgr, "fonts/fish.TTF");
+            tf = App.setFontType(false);
         }
 
         //设置字体

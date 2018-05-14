@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.OnClick;
 import only.you.R;
+import only.you.app.App;
 import only.you.base.BaseActivity;
 import only.you.ui.contract.OlnyouContract;
 import only.you.ui.fragment.AdmireInTheHeartFragemnt;
@@ -95,10 +96,8 @@ public class OlnyouActivity extends BaseActivity implements OlnyouContract {
         for (LinearLayout linearLayout : linearLayouts) {
             onClick(linearLayout);
         }
-        //得到AssetManager
-        AssetManager mgr = getAssets();
         //根据路径得到Typeface
-        Typeface tf = Typeface.createFromAsset(mgr, "fonts/woman.ttf");
+        Typeface tf = App.setFontType(true);
         //设置字体
         for (TextView textView : textViews) {
             textView.setTypeface(tf);

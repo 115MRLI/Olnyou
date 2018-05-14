@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import only.you.R;
+import only.you.app.App;
 import only.you.base.BaseActivity;
 
 public class GankWebActivity extends BaseActivity {
@@ -31,10 +32,8 @@ public class GankWebActivity extends BaseActivity {
         String url = getIntent().getStringExtra("url");
         String name = getIntent().getStringExtra("name");
         titlestr.setText(name);
-        //得到AssetManager
-        AssetManager mgr = getAssets();
         //根据路径得到Typeface
-        Typeface tf = Typeface.createFromAsset(mgr, "fonts/woman.ttf");
+        Typeface tf = App.setFontType(true);
         //设置字体
         titlestr.setTypeface(tf);
 

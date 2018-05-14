@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import only.you.R;
+import only.you.app.App;
 import only.you.base.BaseActivity;
 import only.you.presenter.IClassifyPresenter;
 import only.you.presenter.impl.ClassifyPresenterImpl;
@@ -48,10 +49,8 @@ public class ClassifyActivity extends BaseActivity implements ClassifyContract {
 
     @Override
     protected void initEvent() {
-        //得到AssetManager
-        AssetManager mgr = getAssets();
         //根据路径得到Typeface
-        Typeface tf = Typeface.createFromAsset(mgr, "fonts/woman.ttf");
+        Typeface tf = App.setFontType(true);
         //设置字体
         titleStr.setTypeface(tf);
         //返回
