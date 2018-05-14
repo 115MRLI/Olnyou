@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -26,6 +27,7 @@ import only.you.ui.fragment.AdmireInTheHeartFragemnt;
 import only.you.ui.fragment.DayByDayFragment;
 import only.you.ui.fragment.HomeFragment;
 import only.you.ui.fragment.MyselFragment;
+import only.you.utils.OnlyoUtils;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
@@ -230,5 +232,24 @@ public class OlnyouActivity extends BaseActivity implements OlnyouContract {
                         }
                     }
                 });
+    }
+    //记录用户首次点击返回键的时间
+    private long firstTime=0;
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        switch (keyCode){
+            case KeyEvent.KEYCODE_BACK:
+                long secondTime=System.currentTimeMillis();
+                if(secondTime-firstTime>2000){
+                    OnlyoUtils.showToast("再按一次退出程序");
+                    firstTime=secondTime;
+                    return true;
+                }else{
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
     }
 }
