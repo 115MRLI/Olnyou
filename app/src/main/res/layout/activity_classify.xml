@@ -11,9 +11,17 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="50dp"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/back_lin"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/back_iv" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/titlestr"
